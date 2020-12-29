@@ -8,7 +8,7 @@ using System.Text;
 
 // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService" in both code and config file together.
 [ServiceContract]
-public interface IService
+public partial interface IService
 {
 
 	[OperationContract]
@@ -25,7 +25,7 @@ public interface IService
 public class CompositeType
 {
 	bool boolValue = true;
-	string stringValue = "Hello ";
+	string stringValue = "Hel5lo ";
 
 	[DataMember]
 	public bool BoolValue
@@ -41,3 +41,5 @@ public class CompositeType
 		set { stringValue = value; }
 	}
 }
+
+
