@@ -47,92 +47,6 @@ public partial class Service
         return retVal;
     }
 
-    public TemperatureTable GetLastTemperatureRecord()
-    {
-        TemperatureTable retTable = new TemperatureTable();
-
-        using (InzDatabase db = new InzDatabase())
-        {
-            retTable = db.TemperatureTables.OrderByDescending(r => r.Id).FirstOrDefault();
-        }
-
-        return retTable;
-    }
-
-    public TemperatureCollection GetHourTemperatures()
-    {
-        TemperatureCollection retCollection = new TemperatureCollection();
-        TemperatureTable[] tt;
-
-        using (InzDatabase db = new InzDatabase())
-        {
-            var date = DateTime.Now.AddHours(-1);
-            tt = db.TemperatureTables.Where(d => d.Date > date).ToArray();
-        }
-
-        retCollection.TemperatureTables = tt;
-        return retCollection;
-    }
-
-    public TemperatureCollection GetDailyTemperature()
-    {
-        TemperatureCollection retCollection = new TemperatureCollection();
-        TemperatureTable[] tt;
-
-        using (InzDatabase db = new InzDatabase())
-        {
-            var date = DateTime.Now.AddDays(-1);
-            tt = db.TemperatureTables.Where(d => d.Date > date).ToArray();
-        }
-
-        retCollection.TemperatureTables = tt;
-        return retCollection;
-    }
-
-    public TemperatureCollection GetThreeDaysTemperature()
-    {
-        TemperatureCollection retCollection = new TemperatureCollection();
-        TemperatureTable[] tt;
-
-        using (InzDatabase db = new InzDatabase())
-        {
-            var date = DateTime.Now.AddDays(-1);
-            tt = db.TemperatureTables.Where(d => d.Date > date).ToArray();
-        }
-
-        retCollection.TemperatureTables = tt;
-        return retCollection;
-    }
-
-    public TemperatureCollection GetWeeklyTemperature()
-    {
-        TemperatureCollection retCollection = new TemperatureCollection();
-        TemperatureTable[] tt;
-
-        using (InzDatabase db = new InzDatabase())
-        {
-            var date = DateTime.Now.AddDays(-1);
-            tt = db.TemperatureTables.Where(d => d.Date > date).ToArray();
-        }
-
-        retCollection.TemperatureTables = tt;
-        return retCollection;
-    }
-
-    public TemperatureCollection GetMunuteTemperature()
-    {
-        TemperatureCollection retCollection = new TemperatureCollection();
-        TemperatureTable[] tt;
-
-        using (InzDatabase db = new InzDatabase())
-        {
-            var date = DateTime.Now.AddMinutes(-1);
-            tt = db.TemperatureTables.Where(d => d.Date > date).ToArray();
-        }
-
-        retCollection.TemperatureTables = tt;
-        return retCollection;
-    }
 
     public bool RegisterDevice(string _deviceID)
     {
@@ -159,5 +73,6 @@ public partial class Service
         }
         return true;
     }
+
 
 }

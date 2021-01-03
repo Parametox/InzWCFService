@@ -60,6 +60,19 @@ public partial interface IService
 
 
     [OperationContract]
+    TemperatureCollection GetTwoMunutesTemperature();
+
+    [OperationContract]
+    TemperatureCollection GetThreeMunutesTemperature();
+
+    [OperationContract]
+    TemperatureCollection GetFourMunutesTemperature();
+
+    [OperationContract]
+    TemperatureCollection GetFiveMunutesTemperature();
+
+
+    [OperationContract]
     bool RegisterDevice(string _deviceID);
 }
 
