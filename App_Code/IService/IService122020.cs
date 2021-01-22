@@ -26,52 +26,78 @@ public partial interface IService
     [OperationContract]
     TemperatureTable GetLastTemperatureRecord();
 
-    //// <summary>
-    ///// Zwraca rekordy z ostatniej godziny 
-    ///// </summary>
-    //[OperationContract]
-    //TemperatureCollection GetHourTemperatures();
+    // <summary>
+    /// Zwraca rekordy z ostatniej godziny 
+    /// </summary>
+    [OperationContract]
+    TemperatureCollection GetHourTemperatures();
 
-    //// <summary>
-    ///// Zwraca rekordy z ostatniej doby 
-    ///// </summary>
-    //[OperationContract]
-    //TemperatureCollection GetDailyTemperature();
+    // <summary>
+    /// Zwraca rekordy z ostatniej doby 
+    /// </summary>
+    [OperationContract]
+    TemperatureCollection GetDailyTemperature();
 
-    //// <summary>
-    ///// Zwraca rekordy z ostatnich 3dni 
-    ///// </summary>
-    //[OperationContract]
-    //TemperatureCollection GetThreeDaysTemperature();
-
-
-    //// <summary>
-    ///// Zwraca rekordy z ostatniego tygodnia 
-    ///// </summary>
-    //[OperationContract]
-    //TemperatureCollection GetWeeklyTemperature();
+    // <summary>
+    /// Zwraca rekordy z ostatnich 3dni 
+    /// </summary>
+    [OperationContract]
+    TemperatureCollection GetThreeDaysTemperature();
 
 
     // <summary>
     /// Zwraca rekordy z ostatniego tygodnia 
     /// </summary>
     [OperationContract]
+    TemperatureCollection GetWeeklyTemperature();
+
+
+    // <summary>
+    /// Zwraca rekordy z ostatniej minuty
+    /// </summary>
+    [OperationContract]
     TemperatureCollection GetMunuteTemperature();
 
 
+    // <summary>
+    /// Zwraca rekordy z ostatnich 2 minut
+    /// </summary>
     [OperationContract]
     TemperatureCollection GetTwoMunutesTemperature();
 
+
+    // <summary>
+    /// Zwraca rekordy z ostatnich 3 minut
+    /// </summary>
     [OperationContract]
     TemperatureCollection GetThreeMunutesTemperature();
 
+    // <summary>
+    /// Zwraca rekordy z ostatnich 4 minut
+    /// </summary>
+
     [OperationContract]
     TemperatureCollection GetFourMunutesTemperature();
+
+    // <summary>
+    /// Zwraca rekordy z ostatnich 5 minut
+    /// </summary>
 
     [OperationContract]
     TemperatureCollection GetFiveMunutesTemperature();
 
 
+    // <summary>
+    /// Zwraca rekordy z wybranego przedziału czasowego
+    /// </summary>
+    [OperationContract]
+    TemperatureCollection GetSpecyficTimeTemperature(DateTime _from , DateTime _to);
+    
+    /// <summary>
+    /// Rejestruje urządzenie w bazie danych
+    /// </summary>
+    /// <param name="_deviceID"></param>
+    /// <returns></returns>
     [OperationContract]
     bool RegisterDevice(string _deviceID);
 }

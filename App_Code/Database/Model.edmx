@@ -130,9 +130,7 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="RefTempId" Type="Int64" />
-          <NavigationProperty Name="Logs1" Relationship="Self.FK_Logs_Logs" FromRole="Logs" ToRole="Logs1" />
-          <NavigationProperty Name="Log1" Relationship="Self.FK_Logs_Logs" FromRole="Logs1" ToRole="Logs" />
-        </EntityType>
+          </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -163,28 +161,12 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Logs_Logs">
-          <End Role="Logs" Type="Self.Log" Multiplicity="1" />
-          <End Role="Logs1" Type="Self.Log" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Logs">
-              <PropertyRef Name="LogId" />
-            </Principal>
-            <Dependent Role="Logs1">
-              <PropertyRef Name="LogId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="InzDatabase" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="DeviceTables" EntityType="Self.DeviceTable" />
           <EntitySet Name="Logs" EntityType="Self.Log" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="TemperatureTables" EntityType="Self.TemperatureTable" />
           <EntitySet Name="UserTables" EntityType="Self.UserTable" />
-          <AssociationSet Name="FK_Logs_Logs" Association="Self.FK_Logs_Logs">
-            <End Role="Logs" EntitySet="Logs" />
-            <End Role="Logs1" EntitySet="Logs" />
-          </AssociationSet>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />

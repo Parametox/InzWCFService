@@ -7,10 +7,9 @@
       <Diagram DiagramId="3e14641e93614dc09eb11cf2dcc5ce2b" Name="Diagram1">
         <EntityTypeShape EntityType="InzDatabaseModell.DeviceTable" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="InzDatabaseModell.Log" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="InzDatabaseModell.sysdiagram" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="InzDatabaseModell.TemperatureTable" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="InzDatabaseModell.UserTable" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <AssociationConnector Association="InzDatabaseModell.FK_Logs_Logs" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="InzDatabaseModell.sysdiagram" Width="1.5" PointX="5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="InzDatabaseModell.TemperatureTable" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="InzDatabaseModell.UserTable" Width="1.5" PointX="2.75" PointY="3" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

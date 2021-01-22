@@ -32,9 +32,6 @@ namespace Database
         public string Description { get; set; }
         public string Date { get; set; }
         public Nullable<long> RefTempId { get; set; }
-    
-        public virtual Log Logs1 { get; set; }
-        public virtual Log Log1 { get; set; }
     }
 }
 namespace Database

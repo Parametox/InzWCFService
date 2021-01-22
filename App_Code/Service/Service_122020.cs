@@ -30,7 +30,8 @@ public partial class Service
         {
             if (db.DeviceTables.Any(d => d.DeviceId == deviceID))
             {
-                retVal.DeviceName = db.DeviceTables.Where(id => id.DeviceId == deviceID).FirstOrDefault().Name;
+                retVal.DeviceName = db.DeviceTables.Where(id => id.DeviceId == deviceID).FirstOrDefault().Name; // LINQ
+             
             }
             if (db.UserTables.Any(id => id.UserId == _userId && id.Password == password))
             {

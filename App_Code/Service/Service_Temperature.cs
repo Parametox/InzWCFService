@@ -17,7 +17,67 @@ public partial class Service
         using (InzDatabase db = new InzDatabase())
         {
             var date = DateTime.Now.AddMinutes(minutes);
-            tt = db.TemperatureTables.Where(d => d.Date > date).ToArray();
+
+
+            tt = db.TemperatureTables.Where(d => d.Date >= date).ToArray(); // LINQ
+
+        }
+
+
+
+
+
+
+
+
+
+
+        retCollection.TemperatureTables = tt;
+        return retCollection;
+    }
+
+    private TemperatureCollection GetHourTemperatureCollection(int hours)
+    {
+        TemperatureCollection retCollection = new TemperatureCollection();
+        TemperatureTable[] tt;
+
+        using (InzDatabase db = new InzDatabase())
+        {
+            var date = DateTime.Now.AddHours(hours);
+            tt = db.TemperatureTables.Where(d => d.Date >= date).ToArray();
+        }
+
+        retCollection.TemperatureTables = tt;
+        return retCollection;
+    }
+
+
+    private TemperatureCollection GetDayTemperatureCollection(int days)
+    {
+        TemperatureCollection retCollection = new TemperatureCollection();
+        TemperatureTable[] tt;
+
+        using (InzDatabase db = new InzDatabase())
+        {
+            var date = DateTime.Now.AddDays(days);
+            tt = db.TemperatureTables.Where(d => d.Date >= date).ToArray();
+        }
+
+        retCollection.TemperatureTables = tt;
+        return retCollection;
+    }
+
+    public TemperatureCollection GetSpecyficTimeTemperature(DateTime _from, DateTime _to)
+    {
+        TemperatureCollection retCollection = new TemperatureCollection();
+        TemperatureTable[] tt;
+
+        using (InzDatabase db = new InzDatabase())
+        {
+            var from = _from;
+            var to = _to;
+            tt = db.TemperatureTables.Where(d => d.Date >= from
+                                            && d.Date <= to).ToArray();
         }
 
         retCollection.TemperatureTables = tt;
@@ -64,5 +124,25 @@ public partial class Service
     {
         return GetMinutesTemperatureCollection(-5);
 
+    }
+
+    public TemperatureCollection GetHourTemperatures()
+    {
+        return GetHourTemperatureCollection(-1);
+    }
+
+    public TemperatureCollection GetThreeDaysTemperature()
+    {
+        return GetDayTemperatureCollection(-3);
+
+    }
+    public TemperatureCollection GetWeeklyTemperature()
+    {
+        return GetDayTemperatureCollection(-7);
+
+    }
+    public TemperatureCollection GetDailyTemperature()
+    {
+        return GetDayTemperatureCollection(-1);
     }
 }
