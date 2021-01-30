@@ -17,20 +17,8 @@ public partial class Service
         using (InzDatabase db = new InzDatabase())
         {
             var date = DateTime.Now.AddMinutes(minutes);
-
-
-            tt = db.TemperatureTables.Where(d => d.Date >= date).ToArray(); // LINQ
-
+            tt = db.TemperatureTables.Where(d => d.Date >= date).ToArray(); 
         }
-
-
-
-
-
-
-
-
-
 
         retCollection.TemperatureTables = tt;
         return retCollection;

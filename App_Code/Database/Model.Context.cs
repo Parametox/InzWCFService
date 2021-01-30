@@ -18,10 +18,27 @@ namespace Database
     public partial class InzDatabase : DbContext
     {
         public InzDatabase()
-            : base("name=InzDatabase")
+            : base(nameOrConnectionString: GetConnectionString())
         {
         }
-    
+
+        /// <summary>
+        /// Zwraca Connectionstringa dla bazy danych
+        /// </summary>
+        /// <returns></returns>
+        private static string GetConnectionString()
+        {
+            string str = "metadata=res://*/App_Code.Database.Model.csdl|res://*/App_Code.Database.Model.ssdl|res://*/App_Code.Database.Model.msl;" +
+                "provider=System.Data.SqlClient;" +
+                "provider connection string=\"data source=DESKTOP-2DH49DG;" +
+                "initial catalog=InzDatabase;" +
+                "user id=pci;" +
+                "password=****************************;" + // tu znajduje się jedyne wystapienie hasła do bazy danych.
+                "MultipleActiveResultSets=True;" +
+                "App=EntityFramework\"";
+            return str;
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
