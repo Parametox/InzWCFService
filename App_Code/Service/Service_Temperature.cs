@@ -39,7 +39,6 @@ public partial class Service
         return retCollection;
     }
 
-
     private TemperatureCollection GetDayTemperatureCollection(int days)
     {
         TemperatureCollection retCollection = new TemperatureCollection();
@@ -101,7 +100,6 @@ public partial class Service
 
     }
 
-
     public TemperatureCollection GetFourMunutesTemperature()
     {
         return GetMinutesTemperatureCollection(-4);
@@ -124,11 +122,13 @@ public partial class Service
         return GetDayTemperatureCollection(-3);
 
     }
+
     public TemperatureCollection GetWeeklyTemperature()
     {
         return GetDayTemperatureCollection(-7);
 
     }
+
     public TemperatureCollection GetDailyTemperature()
     {
         return GetDayTemperatureCollection(-1);
