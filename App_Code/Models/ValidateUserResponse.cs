@@ -9,7 +9,7 @@ using System.Web;
 /// </summary>
 [DataContract]
 public class ValidateUserResponse
-{
+{ 
     [DataMember]
     public bool IsValid { get; set; }
 

@@ -34,7 +34,7 @@ public partial interface IService
 
     // <summary>
     /// Zwraca rekordy z ostatniej doby 
-    /// </summary>
+    /// </summary> 
     [OperationContract]
     TemperatureCollection GetDailyTemperature();
 

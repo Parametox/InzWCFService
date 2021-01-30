@@ -35,7 +35,7 @@ public class CompositeType
 	{
 		get { return stringValue; }
 		set { stringValue = value; }
-	}
+	} 
 }
 
 

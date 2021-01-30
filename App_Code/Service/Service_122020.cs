@@ -20,7 +20,7 @@ public partial class Service
         retVal.UserId = userID;
         retVal.DeviceId = deviceID;
 
-        if (String.IsNullOrEmpty(deviceID))
+        if (String.IsNullOrEmpty(deviceID)) 
         {
             retVal.IsValid = false;
             return retVal;

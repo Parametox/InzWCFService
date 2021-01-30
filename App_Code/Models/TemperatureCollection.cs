@@ -7,7 +7,7 @@ using System.Web;
 
 /// <summary>
 /// Summary description for TemperatureCollection
-/// </summary>
+/// </summary> 
 
 [DataContract]
 public class TemperatureCollection

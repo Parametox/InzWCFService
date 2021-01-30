@@ -24,7 +24,7 @@ public partial class Service
         return retCollection;
     }
 
-    private TemperatureCollection GetHourTemperatureCollection(int hours)
+    private TemperatureCollection GetHourTemperatureCollection(int hours) 
     {
         TemperatureCollection retCollection = new TemperatureCollection();
         TemperatureTable[] tt;

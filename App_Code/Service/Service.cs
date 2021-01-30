@@ -15,7 +15,7 @@ public partial class Service : IService
 	}
 
 	public CompositeType GetDataUsingDataContract(CompositeType composite)
-	{
+	{ 
 		if (composite == null)
 		{
 			throw new ArgumentNullException("composite");
